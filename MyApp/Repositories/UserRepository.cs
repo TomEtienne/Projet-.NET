@@ -33,7 +33,7 @@ namespace MyApp.Repositories
 
         public User getUser(string nickName)
         {
-            return context.Users.First((u) => u.nickName == nickName);
+            return context.Users.FirstOrDefault((u) => u.nickName == nickName);
         }
 
         public List<User> getAll()

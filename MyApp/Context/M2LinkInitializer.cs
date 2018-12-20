@@ -21,7 +21,8 @@ namespace MyApp.Context
                     lastName = "Etienne",
                     email = "tag.etienne@gmail.com",
                     nickName = "Spocky",
-                    password = "Coucou95?"
+                    password = "Coucou95?",
+                    verifyPassword ="Coucou95?"
                 });
                 context.SaveChanges();
             }
