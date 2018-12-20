@@ -1,4 +1,5 @@
 ﻿using MyApp.Context;
+using MyApp.Entities;
 using MyApp.Repositories;
 using System;
 using System.Collections.Generic;
@@ -25,20 +26,21 @@ namespace MyApp.WebServices
             return "Hello World";
         }
 
-        /*public string Validate(string nickName, string password)
+        [WebMethod]
+        public User Validate(string nickName, string password)
         {
             using (MyAppContext context = new MyAppContext())
             {
                 UserRepository repo = new UserRepository(context);
                 if (repo.CheckUser(nickName, password))
                 {
-                    
+                    return repo.getUser(nickName);
                 }
                 else
                 {
                     return null;
                 }
             }
-        }*/
+        }
     }
 }

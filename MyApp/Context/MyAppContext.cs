@@ -10,6 +10,7 @@ namespace MyApp.Context
     public class MyAppContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         public MyAppContext()
         {

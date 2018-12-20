@@ -15,7 +15,11 @@ namespace MyApp.Controllers
         // GET: DisplayUsers
         public ActionResult Index()
         {
-            using(MyAppContext context = new MyAppContext())
+            if (!HttpContext.User.Identity.IsAuthenticated)
+            {
+                RedirectToAction("Form", "Login");
+            }
+            using (MyAppContext context = new MyAppContext())
             {
                 UserRepository repo = new UserRepository(context);
                 List<User> users = repo.getAll();

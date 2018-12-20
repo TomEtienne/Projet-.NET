@@ -14,6 +14,10 @@ namespace MyApp.Controllers
     {
         public ActionResult Index()
         {
+            if (!HttpContext.User.Identity.IsAuthenticated)
+            {
+                RedirectToAction("Form", "Login");
+            }
             using (MyAppContext context = new MyAppContext())
             {
                 UserRepository repo = new UserRepository(context);
@@ -27,6 +31,7 @@ namespace MyApp.Controllers
                 };
                 return View(model);
             }
+            
         }
     }
 }
