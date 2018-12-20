@@ -13,7 +13,7 @@ namespace MyApp.Entities
         public Guid id { get; set; }
 
         [Required]
-        public String author { get; set; }
+        public User author { get; set; }
 
         [Required]
         public String text { get; set; }

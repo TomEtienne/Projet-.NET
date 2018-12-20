@@ -10,15 +10,11 @@ using System.Web.Mvc;
 
 namespace MyApp.Controllers
 {
+    [Authorize]
     public class DisplayUsersController : Controller
     {
-        // GET: DisplayUsers
         public ActionResult Index()
         {
-            if (!HttpContext.User.Identity.IsAuthenticated)
-            {
-                RedirectToAction("Form", "Login");
-            }
             using (MyAppContext context = new MyAppContext())
             {
                 UserRepository repo = new UserRepository(context);

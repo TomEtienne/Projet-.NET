@@ -58,5 +58,14 @@ hr {
 
 .dark_button {
     background-color: #212529 !important;
+    color: white !important;
+}
+
+button a {
     color: white;
+}
+
+button a:hover {
+    color: white;
+    text-decoration: none;
 }

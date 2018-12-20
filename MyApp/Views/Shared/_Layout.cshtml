@@ -18,7 +18,8 @@
                         <li class="nav-link">@Html.ActionLink("MyApp", "Index", "Home")</li>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-link">@Html.ActionLink("Profil", "Index", "DisplayProfil")</li>
+                            <li class="nav-link">@Html.ActionLink("Profil", "Index", "Profil")</li>
+                            <li class="nav-link">@Html.ActionLink("Poster un message", "Index", "Message")</li>
                             <li class="nav-link">@Html.ActionLink("Utilisateurs", "Index", "DisplayUsers")</li>
                             <li class="nav-link">@Html.ActionLink("Deconnexion", "Disconnect", "Login")</li>
                         }
