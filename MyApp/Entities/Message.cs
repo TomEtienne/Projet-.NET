@@ -13,9 +13,11 @@ namespace MyApp.Entities
         public Guid id { get; set; }
 
         [Required]
-        public User author { get; set; }
+        [Display(Name = "Auteur du message")]
+        public String author { get; set; }
 
         [Required]
+        [Display(Name = "Message posté")]
         public String text { get; set; }
 
         [Required]

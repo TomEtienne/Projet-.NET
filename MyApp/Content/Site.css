@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+   
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,6 +22,11 @@ input, select, textarea {
 
 .widthContainer {
     width: 100%;
+    padding-left: 30px;
+}
+
+.navbar-toggler{
+    background-color: white !important;
 }
 
 .navbar {
@@ -30,7 +34,7 @@ input, select, textarea {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 0 !important;
+    padding-left: 20px !important;
     padding-right: 0 !important;
 }
 

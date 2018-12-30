@@ -12,28 +12,28 @@ namespace MyApp.Controllers
     [Authorize]
     public class MessageController : Controller
     {
-        // GET: Message
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult Index(Message model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
             using (MyAppContext context = new MyAppContext())
             {
                 UserRepository repoUser = new UserRepository(context);
-                User user = repoUser.getUser(HttpContext.User.Identity.Name);
                 MessageRepository repoMessage = new MessageRepository(context);
+
+                User user = repoUser.getUser(HttpContext.User.Identity.Name);
                 Message message = new Message()
                 {
-                    author = user,
+                    author = user.nickName,
                     text = model.text
                 };
                 repoMessage.Add(message);
                 context.SaveChanges();
             }
-
             return RedirectToAction("Index", "Home");
         }
     }
