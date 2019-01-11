@@ -4,6 +4,7 @@ using MyApp.Models;
 using MyApp.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -49,7 +50,9 @@ namespace MyApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(DisplayInfosModel model)
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Exclude = "UserPhoto")]DisplayInfosModel model)
         {
             using (MyAppContext context = new MyAppContext())
             {
@@ -59,6 +62,18 @@ namespace MyApp.Controllers
                 user.lastName = model.lastName;
                 user.email = model.email;
                 user.nickName = model.nickName;
+
+                byte[] imageData = null;
+
+                HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
+
+                using (var binary = new BinaryReader(poImgFile.InputStream))
+                {
+                    imageData = binary.ReadBytes(poImgFile.ContentLength);
+                }
+
+                user.UserPhoto = imageData;
+
                 context.SaveChanges();
 
                 return RedirectToAction("Index","Profil");

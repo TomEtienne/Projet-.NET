@@ -21,6 +21,8 @@ namespace MyApp.Models
         [Required]
         [Display(Name = "Pseudo")]
         public String nickName { get; set; }
+        [Display(Name = "Photo de profil")]
+        public byte[] UserPhoto { get; set; }
 
         public DisplayInfosModel() { }
     }

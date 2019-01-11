@@ -34,6 +34,8 @@ namespace MyApp.Entities
         [Display(Name = "Confirmation du Mot de Passe")]
         [Compare(nameof(password))]
         public String verifyPassword { get; set; }
+        [Display(Name = "Photo de profil")]
+        public byte[] UserPhoto { get; set; }
 
         public User()
         {
