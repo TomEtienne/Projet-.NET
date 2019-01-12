@@ -25,5 +25,11 @@ namespace MyApp.Repositories
         {
             return context.Messages.ToList();
         }
+
+        public List<Message> getAllByName(string nickname)
+        {
+            List<Message> messages = context.Messages.Where((m) => m.author == nickname).ToList();
+            return messages;
+        }
     }
 }

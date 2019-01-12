@@ -157,6 +157,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\M2LinkInitializer.cs" />
     <Compile Include="Context\MyAppContext.cs" />
+    <Compile Include="Controllers\DisplayMessageController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProfilController.cs" />
     <Compile Include="Controllers\DisplayUsersController.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DisplayInfosMessage.cs" />
     <Compile Include="Models\DisplayInfosModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
@@ -254,6 +256,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Profil\Edit.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\DisplayMessage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,9 +5,11 @@
 }
 
 <div class="widthContainer">
+    <br />
+    <h4>Liste des utilisateurs enregistrés</h4>
     <hr />
     <table class="table table-hover">
-        <thead class="thead-dark">
+        <thead class="table-striped">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.lastName)
@@ -26,22 +28,23 @@
         </thead>
 
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.lastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.firstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nickName)
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.firstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nickName)
+                </td>
+            </tr>
+        }
 
     </table>
 </div>

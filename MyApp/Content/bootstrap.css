@@ -1515,7 +1515,6 @@ pre code {
 }
 
 .table {
-  width: 100%;
   margin-bottom: 1rem;
   background-color: transparent;
 }
@@ -4083,7 +4082,7 @@ input[type="button"].btn-block {
     position: absolute;
   }
   .navbar-expand-sm .navbar-nav .nav-link {
-    padding-right: 0.5rem;
+    padding-right: 1.5rem;
     padding-left: 0.5rem;
   }
   .navbar-expand-sm > .container,

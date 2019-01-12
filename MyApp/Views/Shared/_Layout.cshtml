@@ -12,17 +12,18 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <nav class="navbar navbar-expand-md">
+            <nav class="navbar navbar-expand-sm">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="nav">
+                    <ul class="navbar-nav">
                         <li class="nav-link">@Html.ActionLink("MyApp", "Index", "Home")</li>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-link">@Html.ActionLink("Profil", "Index", "Profil")</li>
                             <li class="nav-link">@Html.ActionLink("Poster un message", "Index", "Message")</li>
+                            <li class="nav-link">@Html.ActionLink("Messages postés", "Index", "DisplayMessage")</li>
                             <li class="nav-link">@Html.ActionLink("Utilisateurs", "Index", "DisplayUsers")</li>
                             <li class="nav-link">@Html.ActionLink("Deconnexion", "Disconnect", "Login")</li>
                         }

@@ -4,14 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MyApp.Entities
+namespace MyApp.Models
 {
-    public class Message
+    public class DisplayInfosMessage
     {
-        [KeyAttribute]
-        [Required]
-        public Guid id { get; set; }
-
         [Required]
         [Display(Name = "Auteur du message")]
         public String author { get; set; }
@@ -21,14 +17,11 @@ namespace MyApp.Entities
         public String text { get; set; }
 
         [Required]
-        [Display(Name = "Date")]
         public DateTime date { get; set; }
 
-        public Message()
+        public DisplayInfosMessage()
         {
-            this.id = Guid.NewGuid();
             this.date = DateTime.Now;
         }
-
     }
 }

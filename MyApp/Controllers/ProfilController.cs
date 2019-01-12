@@ -63,18 +63,23 @@ namespace MyApp.Controllers
                 user.email = model.email;
                 user.nickName = model.nickName;
 
-                byte[] imageData = null;
-
                 HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
 
-                using (var binary = new BinaryReader(poImgFile.InputStream))
+                if (poImgFile.ContentLength != 0)
                 {
-                    imageData = binary.ReadBytes(poImgFile.ContentLength);
+                    byte[] imageData = null;
+
+                    //HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
+
+                    using (var binary = new BinaryReader(poImgFile.InputStream))
+                    {
+                        imageData = binary.ReadBytes(poImgFile.ContentLength);
+                    }
+
+                    user.UserPhoto = imageData;
+
+                    context.SaveChanges();
                 }
-
-                user.UserPhoto = imageData;
-
-                context.SaveChanges();
 
                 return RedirectToAction("Index","Profil");
             }
