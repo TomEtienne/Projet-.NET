@@ -27,7 +27,7 @@
                             <li class="nav-link">@Html.ActionLink("Utilisateurs", "Index", "DisplayUsers")</li>
                         </ul>
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-link">@Html.ActionLink("Deconnexion", "Disconnect", "Login")</li>
+                            <li class="nav-link"><a href="/Login/Disconnect">Deconnexion   <i class='fas fa-power-off'></i></a></li>
                         </ul>
 
                     }
@@ -38,8 +38,8 @@
                             <li class="nav-link">@Html.ActionLink("Créer un compte", "Form", "Register")</li>
                             <li class="nav-link">@Html.ActionLink("Connexion", "Form", "Login")</li>
                         </ul>
-                        }
-                    </div>
+                    }
+                </div>
             </nav>
         </div>
     </div>
@@ -49,10 +49,11 @@
         <div class="row">
             @RenderBody()
         </div>
-        
+
         <hr />
     </div>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
