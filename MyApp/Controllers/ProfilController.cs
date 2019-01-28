@@ -25,7 +25,8 @@ namespace MyApp.Controllers
                     email = user.email,
                     firstName = user.firstName,
                     lastName = user.lastName,
-                    nickName = user.nickName
+                    nickName = user.nickName,
+                    UserPhoto = user.UserPhoto
                 };
                 return View(model);
             }
