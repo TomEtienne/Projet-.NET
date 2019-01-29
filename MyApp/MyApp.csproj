@@ -257,6 +257,8 @@
     <Content Include="Views\Profil\Edit.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\DisplayMessage\Index.cshtml" />
+    <Content Include="Views\DisplayUsers\OtherProfil.cshtml" />
+    <Content Include="Views\DisplayUsers\_InfoProfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

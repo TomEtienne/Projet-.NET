@@ -5,11 +5,12 @@
     <h4>Détails du Profil</h4>
     <hr />
 
-    @if(Model.UserPhoto != null){
-    <div class="form-group row">
-        @{var image = Convert.ToBase64String(Model.UserPhoto);}
-        <img class="img_style" src="data:image/gif;base64,@image" />
-    </div>
+    @if (Model.UserPhoto != null)
+    {
+        <div class="form-group row">
+            @{var image = Convert.ToBase64String(Model.UserPhoto);}
+            <img class="img_style" src="data:image/gif;base64,@image" />
+        </div>
     }
     <div class="form-group row">
         <label for="staticEmail" class="col-sm-1 col-form-label title">@Html.DisplayNameFor(model => model.lastName)</label>
@@ -35,11 +36,4 @@
             <label class="col-sm-0 col-form-label text">@Html.DisplayFor(model => model.nickName)</label>
         </div>
     </div>
-    <div>
-        <button class="btn dark_button">@Html.ActionLink("Editer son profil", "Edit", "Profil")</button>
-    </div>
-
 </div>
-
-
-

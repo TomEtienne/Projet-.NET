@@ -12,16 +12,16 @@
         <thead class="table-striped">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.lastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.firstName)
+                    @Html.DisplayNameFor(model => model.nickName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.email)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.nickName)
+                    @Html.DisplayNameFor(model => model.lastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.firstName)
                 </th>
                 <th></th>
             </tr>
@@ -30,21 +30,29 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
+            @if (item.nickName != User.Identity.Name)
+            {
+                <td>
+                    <a href="/DisplayUsers/OtherProfil?nickName=@item.nickName">@item.nickName</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.lastName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.firstName)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nickName)
-                </td>
-            </tr>
+            }
+
+        </tr>
         }
 
     </table>
+
+    <div class="small_message">
+        Cliquer sur le pseudo d'un utilisateur pour afficher son profil
+    </div>
 </div>

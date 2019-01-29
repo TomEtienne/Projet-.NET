@@ -37,5 +37,28 @@ namespace MyApp.Controllers
             }
         
         }
+
+        [HttpGet]
+        public ActionResult OtherProfil()
+        {
+            String nickName = Request.QueryString["nickName"];
+            using (MyAppContext context = new MyAppContext())
+            {
+                UserRepository repo = new UserRepository(context);
+                User user = repo.getUser(nickName);
+                DisplayInfosModel model = new DisplayInfosModel()
+                {
+                    email = user.email,
+                    firstName = user.firstName,
+                    lastName = user.lastName,
+                    nickName = user.nickName,
+                    UserPhoto = user.UserPhoto
+                };
+                return View(model);
+            }
+        }
+
+
     }
+
 }
