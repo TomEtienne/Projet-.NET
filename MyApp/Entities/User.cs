@@ -36,10 +36,16 @@ namespace MyApp.Entities
         public String verifyPassword { get; set; }
         [Display(Name = "Photo de profil")]
         public byte[] UserPhoto { get; set; }
+        [Display(Name = "Utilisateurs suivis")]
+        public virtual List<User> listUsersfollow { get; set; }
+        [Display(Name = "Utilisateurs suivis")]
+        public virtual List<User> listUsersfollowBy { get; set; }
 
         public User()
         {
             this.id = Guid.NewGuid();
+            this.listUsersfollow = new List<User>();
+            this.listUsersfollowBy = new List<User>();
         }
     }
 }

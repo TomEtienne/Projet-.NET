@@ -58,6 +58,25 @@ namespace MyApp.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult Follow()
+        {
+            String nickName = Request.QueryString["nickName"];
+            using (MyAppContext context = new MyAppContext())
+            {
+                UserRepository repo = new UserRepository(context);
+
+                User userFollowed = repo.getUser(nickName);
+                User userConnected = repo.getUser(HttpContext.User.Identity.Name);
+                userConnected.listUsersfollow.Add(userFollowed);
+                userFollowed.listUsersfollowBy.Add(userConnected);
+
+                context.SaveChanges();
+
+                return RedirectToAction("Index", "DisplayUsers");
+            }
+        }
+
 
     }
 

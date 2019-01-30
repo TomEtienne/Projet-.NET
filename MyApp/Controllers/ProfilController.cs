@@ -53,7 +53,7 @@ namespace MyApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Exclude = "UserPhoto")]DisplayInfosModel model)
+        public ActionResult Edit([Bind(Exclude= "UserPhoto")]DisplayInfosModel model)
         {
             using (MyAppContext context = new MyAppContext())
             {
@@ -69,8 +69,6 @@ namespace MyApp.Controllers
                 if (poImgFile.ContentLength != 0)
                 {
                     byte[] imageData = null;
-
-                    //HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
 
                     using (var binary = new BinaryReader(poImgFile.InputStream))
                     {

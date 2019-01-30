@@ -36,4 +36,7 @@
             <label class="col-sm-0 col-form-label text">@Html.DisplayFor(model => model.nickName)</label>
         </div>
     </div>
+    <div class="form-group row">
+        <a class="btn dark_button margin-op" id="follow" onclick="buttonFollow" href="/DisplayUsers/Follow?nickName=@Html.DisplayFor(model => model.nickName)">Suivre</a>
+    </div>
 </div>

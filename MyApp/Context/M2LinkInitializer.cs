@@ -22,7 +22,9 @@ namespace MyApp.Context
                     email = "tag.etienne@gmail.com",
                     nickName = "Spocky",
                     password = "Coucou95?",
-                    verifyPassword ="Coucou95?"
+                    verifyPassword = "Coucou95?",
+                    listUsersfollow = null,
+                    listUsersfollowBy = null
                 });
                 context.SaveChanges();
             }
