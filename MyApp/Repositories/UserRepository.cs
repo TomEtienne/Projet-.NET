@@ -23,12 +23,22 @@ namespace MyApp.Repositories
 
         public Boolean CheckUser(string nickName, string password)
         {
-            User user = context.Users.First((u) => u.nickName == nickName);
-            if (user == null) {
+            if(nickName != null || password != null)
+            {
+                User user = context.Users.First((u) => u.nickName == nickName);
+                if (user != null)
+                {
+                    return user.password == password;
+                }
+                else
+                {
+                    return false;
+                }
+            } else
+            {
                 return false;
-            } else {
-                return user.password == password;
             }
+           
         }
 
         public User getUser(string nickName)

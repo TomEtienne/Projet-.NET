@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +58,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -176,9 +179,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MessageRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="WebServices\WSLogin.asmx.cs">
-      <DependentUpon>WSLogin.asmx</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="WebServices\IWSLogin.cs" />
+    <Compile Include="WebServices\IWSMessage.cs" />
+    <Compile Include="WebServices\WSLogin.svc.cs">
+      <DependentUpon>WSLogin.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\WSMessage.svc.cs">
+      <DependentUpon>WSMessage.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -206,7 +213,6 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="WebServices\WSLogin.asmx" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
@@ -216,6 +222,8 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="libman.json" />
+    <Content Include="WebServices\WSLogin.svc" />
+    <Content Include="WebServices\WSMessage.svc" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -273,6 +281,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

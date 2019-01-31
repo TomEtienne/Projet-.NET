@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MyApp.WebServices.WSMessage" CodeBehind="WSMessage.svc.cs" %>
