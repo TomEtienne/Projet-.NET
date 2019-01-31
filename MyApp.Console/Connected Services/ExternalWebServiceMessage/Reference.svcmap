@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5221c3e9-96ff-4746-a8a6-0b795acf93f2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58914/WebServices/WSMessage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSMessage.wsdl" MetadataType="Wsdl" ID="e95eb187-9232-4311-8496-820e58e075ec" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSMessage.svc?wsdl" />
+    <MetadataFile FileName="WSMessage.xsd" MetadataType="Schema" ID="a2560004-362b-4987-9219-1b4b33041d92" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSMessage.svc?xsd=xsd2" />
+    <MetadataFile FileName="WSMessage.disco" MetadataType="Disco" ID="8fe6c9f0-912c-45f1-84f2-ebfcfc213190" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSMessage.svc?disco" />
+    <MetadataFile FileName="WSMessage1.xsd" MetadataType="Schema" ID="09214f20-9e0b-4e15-83e4-dc8e2c583976" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSMessage.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSMessage2.xsd" MetadataType="Schema" ID="ee45fb87-3c52-470e-acdf-523cc3827e86" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSMessage.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="91ba01dc-2ddb-4272-99dd-03f962944f95" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58914/WebServices/WSLogin.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSLogin.xsd" MetadataType="Schema" ID="e21090f1-c89f-48fc-b707-7804cc58b591" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSLogin.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSLogin.wsdl" MetadataType="Wsdl" ID="bc2d6f83-6dad-43c4-bcc5-d7918f04d688" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSLogin.svc?wsdl" />
+    <MetadataFile FileName="WSLogin1.xsd" MetadataType="Schema" ID="32d2dfc8-a5b6-4a72-a50d-08acc03fe25c" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSLogin.svc?xsd=xsd0" />
+    <MetadataFile FileName="WSLogin.disco" MetadataType="Disco" ID="d9e0e0bc-0c0d-4dc3-b0a4-90960025b946" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSLogin.svc?disco" />
+    <MetadataFile FileName="WSLogin2.xsd" MetadataType="Schema" ID="bd900675-b71e-46cd-a03d-695a5cceaa8f" SourceId="1" SourceUrl="http://localhost:58914/WebServices/WSLogin.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
