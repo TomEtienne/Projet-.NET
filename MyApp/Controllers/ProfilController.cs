@@ -33,27 +33,10 @@ namespace MyApp.Controllers
             
         }
 
-        public ActionResult Edit()
-        {
-            using (MyAppContext context = new MyAppContext())
-            {
-                UserRepository repo = new UserRepository(context);
-                User user = repo.getUser(HttpContext.User.Identity.Name);
-                DisplayInfosModel model = new DisplayInfosModel()
-                {
-                    email = user.email,
-                    firstName = user.firstName,
-                    lastName = user.lastName,
-                    nickName = user.nickName
-                };
-                return View(model);
-            }
-        }
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Exclude= "UserPhoto")]DisplayInfosModel model)
+        public ActionResult Edit([Bind(Exclude = "UserPhoto")]DisplayInfosModel model)
         {
             using (MyAppContext context = new MyAppContext())
             {
@@ -62,7 +45,7 @@ namespace MyApp.Controllers
                 user.firstName = model.firstName;
                 user.lastName = model.lastName;
                 user.email = model.email;
-                user.nickName = model.nickName;
+                //user.nickName = model.nickName;
 
                 HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
 
@@ -80,7 +63,24 @@ namespace MyApp.Controllers
                     context.SaveChanges();
                 }
 
-                return RedirectToAction("Index","Profil");
+                return RedirectToAction("Index", "Profil");
+            }
+        }
+
+        public ActionResult Edit()
+        {
+            using (MyAppContext context = new MyAppContext())
+            {
+                UserRepository repo = new UserRepository(context);
+                User user = repo.getUser(HttpContext.User.Identity.Name);
+                DisplayInfosModel model = new DisplayInfosModel()
+                {
+                    email = user.email,
+                    firstName = user.firstName,
+                    lastName = user.lastName,
+                    //nickName = user.nickName
+                };
+                return View(model);
             }
         }
 
